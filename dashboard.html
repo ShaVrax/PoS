@@ -223,15 +223,15 @@
     <div class="dropdownmenu">
         <ul id="dropdown">
             <li>
-                <a href="/dashboard/dashboard.html" id="dashboard">Dashboard</a>
+                <a href="dashboard.html" id="dashboard">Dashboard</a>
             </li>
             <li>
                 <a href="#">File Maintenance</a>
                 <ul class="dropdown">
                     <li><a href="usermanagement.html" id="userManagement"><i class="ph ph-users-four"></i>User Management</a></li>
-                    <li><a href="/manageproducts/manageproducts.html" id="manageProduct"><i class="ph ph-package"></i>Manage Product</a></li>
-                    <li><a href="/managecategories/managecategories.html" id="manageCategories"><i class="ph ph-clipboard-text"></i>Manage Categories</a></li>
-                    <li><a href="/suppliers/suppliers.html" id="supplier"><i class="ph ph-handshake"></i>Supplier</a></li>
+                    <li><a href="manageproducts.html" id="manageProduct"><i class="ph ph-package"></i>Manage Product</a></li>
+                    <li><a href="managecategories.html" id="manageCategories"><i class="ph ph-clipboard-text"></i>Manage Categories</a></li>
+                    <li><a href="suppliers.html" id="supplier"><i class="ph ph-handshake"></i>Supplier</a></li>
                 </ul>
             </li>
             <li>
@@ -244,8 +244,8 @@
             <li>
                 <a href="#">Order</a>
                 <ul class="dropdown1">
-                    <li><a href="/saleshistory/saleshistory.html" id="salesHistory"><i class="ph ph-clock-clockwise"></i>Sales History</a></li>
-                    <li><a href="/salesreport/salesreport.html" id="salesReport"><i class="ph ph-chart-line-up"></i>Sales Report</a></li>
+                    <li><a href="saleshistory.html" id="salesHistory"><i class="ph ph-clock-clockwise"></i>Sales History</a></li>
+                    <li><a href="salesreport.html" id="salesReport"><i class="ph ph-chart-line-up"></i>Sales Report</a></li>
                 </ul>
             </li>
         </ul>
@@ -337,32 +337,32 @@ document.querySelector('.signOut').addEventListener('click', () => {
 
 
 document.querySelector('#dashboard').addEventListener('click', ()=>{
-    location.replace('/dashboard/dashboard.html');
+    location.replace('dashboard.html');
 })
 document.querySelector('#userManagement').addEventListener('click', ()=>{
     window.open('usermanagement.html');
   window.close();
 })
 document.querySelector('#manageProduct').addEventListener('click', ()=>{
-    location.replace('/manageproducts/manageproducts.html');
+    location.replace('manageproducts.html');
 })
 document.querySelector('#manageCategories').addEventListener('click', ()=>{
-    location.replace('/managecategories/managecategories.html');
+    location.replace('managecategories.html');
 })
 document.querySelector('#supplier').addEventListener('click', ()=>{
-    location.replace('/suppliers/suppliers.html');
+    location.replace('suppliers.html');
 })
 document.querySelector('#pointOfSales').addEventListener('click', ()=>{
-    location.replace('/pointsofsales/pointsofsales.html');
+    location.replace('pointsofsales.html');
 })
 document.querySelector('#purchaseOrder').addEventListener('click', ()=>{
-    location.replace('/reorder/reorder.html');
+    location.replace('reorder.html');
 })
 document.querySelector('#salesHistory').addEventListener('click', ()=>{
-    location.replace('/saleshistory/saleshistory.html');
+    location.replace('saleshistory.html');
 })
 document.querySelector('#salesReport').addEventListener('click', ()=>{
-    location.replace('/salesreport/salesreport.html');
+    location.replace('salesreport.html');
 })
     </script>
 
