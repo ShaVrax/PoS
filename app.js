@@ -69,7 +69,7 @@ let clearText = () =>{
         const user = userCredential.user;
         console.log(user);
         alert('Log In Successfully');
-        location.href = 'dashboard.html';
+        location.href = 'https://github.com/ShaVrax/maryjosetteacademy';
     })
     .catch((error) =>{
         const errorCode = error.code;
