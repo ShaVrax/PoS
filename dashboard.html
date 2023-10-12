@@ -5,207 +5,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="dashboard.css">
     <title>POS System</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-}
-
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 9%;
-    background-color: #314e6d;
-}
-
-header h2{
-    font-size: 1.75rem;
-    color: #fff;
-}
-
-header .search{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #fff;
-    border-radius: 4rem;
-    padding: .5rem 2rem;
-}
-
-::placeholder{
-    color: #fff;
-}
-
-header .search input{
-    font-size: 1.25rem;
-    background-color: transparent;
-    color: #fff;
-}
-
-header .search i{
-    font-size: 1.25rem;
-    color: #fff;
-}
-
-header button{
-    font-size: 1.5rem;
-    color: #fff;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    cursor: pointer;
-}
-
-.dropdownmenu{
-    background-color: #000;
-}
-
-.dropdownmenu i{
-    font-size: 1.75rem;
-    color: #fff;
-    margin-right: .75rem;
-}
-
-ul{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-ul li{
-    display: inline-block;
-    position: relative;
-}
-
-ul li a{
-    display: block;
-    padding: 1.25rem 1.75rem;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.25rem;
-    color: #fff;
-}
-
-ul li ul.dropdown li,
-ul li ul.dropdown1 li{
-    display: block;
-    transition: .3s;
-}
-
-ul li ul.dropdown,
-ul li ul.dropdown1{
-    width: 150%;
-    position: absolute;
-    z-index: 999;
-    display: none;
-    background-color: #000;
-    color: #fff;
-}
-
-ul li ul.dropdown1{
-    width: 200%;
-}
-
-ul li ul.dropdown li:hover,
-ul li ul.dropdown1 li:hover{
-    background-color: #ffffff77;
-}
-
-ul li:hover ul.dropdown,
-ul li:hover ul.dropdown1{
-    display: block;
-}
-
-/* hero */
-.hero{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 4rem;
-    width: 100%;
-    padding: 2rem 0;
-    overflow-x: hidden;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.sales-report{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.daily, .monthly, .yearly{
-    background-color: #000;
-    padding: 2rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.daily h3, .monthly h3, .yearly h3{
-    font-size: 1.75rem;
-    color: #fff;
-    letter-spacing: 2px;
-}
-
-.daily h2, .monthly h2, .yearly h2{
-    font-size: 3rem;
-    color: #fff;
-}
-
-.overview-product{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.sales-overview h2{
-    text-align: center;
-}
-
-.sales-overview img{
-    height: 400px;
-}
-
-.products h1{
-    font-size: 3rem;
-}
-
-.chart div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.chart div h3{
-    width: 10%;
-    font-size: 1.5rem;
-}
-
-.chart span{
-    display: block;
-    text-align: right;
-    border-top: 1rem solid #000;
-    width: 100%;
-    border-radius: 2rem;
-}
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        }
+        
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 9%;
+            background-color: #314e6d;
+        }
+        
+        header h2{
+            font-size: 1.75rem;
+            color: #fff;
+        }
+        
+        header .search{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+            border-radius: 4rem;
+            padding: .5rem 2rem;
+        }
+        
+        ::placeholder{
+            color: #fff;
+        }
+        
+        header .search input{
+            font-size: 1.25rem;
+            background-color: transparent;
+            color: #fff;
+        }
+        
+        header .search i{
+            font-size: 1.25rem;
+            color: #fff;
+        }
+        
+        header button{
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            cursor: pointer;
+        }
+        
+        .dropdownmenu{
+            background-color: #000;
+        }
+        
+        .dropdownmenu i{
+            font-size: 1.75rem;
+            color: #fff;
+            margin-right: .75rem;
+        }
+        
+        ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        
+        ul li{
+            display: inline-block;
+            position: relative;
+        }
+        
+        ul li a{
+            display: block;
+            padding: 1.25rem 1.75rem;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.25rem;
+            color: #fff;
+        }
+        
+        ul li ul.dropdown li,
+        ul li ul.dropdown1 li{
+            display: block;
+            transition: .3s;
+        }
+        
+        ul li ul.dropdown,
+        ul li ul.dropdown1{
+            width: 150%;
+            position: absolute;
+            z-index: 999;
+            display: none;
+            background-color: #000;
+            color: #fff;
+        }
+        
+        ul li ul.dropdown1{
+            width: 200%;
+        }
+        
+        ul li ul.dropdown li:hover,
+        ul li ul.dropdown1 li:hover{
+            background-color: #ffffff77;
+        }
+        
+        ul li:hover ul.dropdown,
+        ul li:hover ul.dropdown1{
+            display: block;
+        }
+        
+        /* hero */
+        .hero{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 4rem;
+            width: 100%;
+            padding: 2rem 0;
+            overflow-x: hidden;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .sales-report{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .daily, .monthly, .yearly{
+            background-color: #000;
+            padding: 2rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .daily h3, .monthly h3, .yearly h3{
+            font-size: 1.75rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        
+        .daily h2, .monthly h2, .yearly h2{
+            font-size: 3rem;
+            color: #fff;
+        }
+        
+        .overview-product{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        
+        .sales-overview h2{
+            text-align: center;
+        }
+        
+        .sales-overview img{
+            height: 400px;
+        }
+        
+        .products h1{
+            font-size: 3rem;
+        }
+        
+        .chart div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chart div h3{
+            width: 10%;
+            font-size: 1.5rem;
+        }
+        
+        .chart span{
+            display: block;
+            text-align: right;
+            border-top: 1rem solid #000;
+            width: 100%;
+            border-radius: 2rem;
+        }
     </style>
 
     
