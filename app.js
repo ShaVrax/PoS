@@ -3,7 +3,8 @@ const signupBtn = document.querySelector('#signupBtn');
 const signupForm = document.getElementById('signup');
 
 document.querySelector('#forgotPassword').addEventListener('click', ()=>{
-  location.replace('/forgotpassword/forgotpassword.html');
+  window.open('forgotpassword.html');
+  window.close();
 })
 
 signupBtn.addEventListener('click', ()=>{
@@ -70,6 +71,7 @@ let clearText = () =>{
         console.log(user);
         alert('Log In Successfully');
         window.open("dashboard.html");
+        window.close();
     })
     .catch((error) =>{
         const errorCode = error.code;
