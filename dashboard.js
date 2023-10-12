@@ -35,7 +35,8 @@ document.querySelector('#dashboard').addEventListener('click', ()=>{
     location.replace('/dashboard/dashboard.html');
 })
 document.querySelector('#userManagement').addEventListener('click', ()=>{
-    location.replace('/usermanagement/usermanagement.html');
+    window.open('usermanagement.html');
+  window.close();
 })
 document.querySelector('#manageProduct').addEventListener('click', ()=>{
     location.replace('/manageproducts/manageproducts.html');
