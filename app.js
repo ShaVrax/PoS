@@ -69,7 +69,7 @@ let clearText = () =>{
         const user = userCredential.user;
         console.log(user);
         alert('Log In Successfully');
-        window.open("https://github.com/ShaVrax/maryjosetteacademy");
+        window.open("https://shavrax.github.io/maryjosetteacademy/");
     })
     .catch((error) =>{
         const errorCode = error.code;
