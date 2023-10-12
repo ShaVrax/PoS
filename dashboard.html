@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <title>POS System</title>
-
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -19,7 +18,7 @@
             box-sizing: border-box;
             font-family: 'Poppins', Arial, Helvetica, sans-serif;
         }
-        
+
         header{
             display: flex;
             align-items: center;
@@ -27,12 +26,12 @@
             padding: 1rem 9%;
             background-color: #314e6d;
         }
-        
+
         header h2{
             font-size: 1.75rem;
             color: #fff;
         }
-        
+
         header .search{
             display: flex;
             align-items: center;
@@ -41,22 +40,22 @@
             border-radius: 4rem;
             padding: .5rem 2rem;
         }
-        
+
         ::placeholder{
             color: #fff;
         }
-        
+
         header .search input{
             font-size: 1.25rem;
             background-color: transparent;
             color: #fff;
         }
-        
+
         header .search i{
             font-size: 1.25rem;
             color: #fff;
         }
-        
+
         header button{
             font-size: 1.5rem;
             color: #fff;
@@ -66,29 +65,29 @@
             gap: .5rem;
             cursor: pointer;
         }
-        
+
         .dropdownmenu{
             background-color: #000;
         }
-        
+
         .dropdownmenu i{
             font-size: 1.75rem;
             color: #fff;
             margin-right: .75rem;
         }
-        
+
         ul{
             list-style: none;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
         }
-        
+
         ul li{
             display: inline-block;
             position: relative;
         }
-        
+
         ul li a{
             display: block;
             padding: 1.25rem 1.75rem;
@@ -97,13 +96,13 @@
             font-size: 1.25rem;
             color: #fff;
         }
-        
+
         ul li ul.dropdown li,
         ul li ul.dropdown1 li{
             display: block;
             transition: .3s;
         }
-        
+
         ul li ul.dropdown,
         ul li ul.dropdown1{
             width: 150%;
@@ -113,21 +112,21 @@
             background-color: #000;
             color: #fff;
         }
-        
+
         ul li ul.dropdown1{
             width: 200%;
         }
-        
+
         ul li ul.dropdown li:hover,
         ul li ul.dropdown1 li:hover{
             background-color: #ffffff77;
         }
-        
+
         ul li:hover ul.dropdown,
         ul li:hover ul.dropdown1{
             display: block;
         }
-        
+
         /* hero */
         .hero{
             display: flex;
@@ -141,13 +140,13 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .sales-report{
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
         }
-        
+
         .daily, .monthly, .yearly{
             background-color: #000;
             padding: 2rem;
@@ -156,48 +155,48 @@
             align-items: center;
             flex-direction: column;
         }
-        
+
         .daily h3, .monthly h3, .yearly h3{
             font-size: 1.75rem;
             color: #fff;
             letter-spacing: 2px;
         }
-        
+
         .daily h2, .monthly h2, .yearly h2{
             font-size: 3rem;
             color: #fff;
         }
-        
+
         .overview-product{
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
         }
-        
+
         .sales-overview h2{
             text-align: center;
         }
-        
+
         .sales-overview img{
             height: 400px;
         }
-        
+
         .products h1{
             font-size: 3rem;
         }
-        
+
         .chart div{
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
+
         .chart div h3{
             width: 10%;
             font-size: 1.5rem;
         }
-        
+
         .chart span{
             display: block;
             text-align: right;
@@ -207,7 +206,7 @@
         }
     </style>
 
-    
+    <title>POS System</title>
 </head>
 <body>
 
@@ -237,8 +236,8 @@
             <li>
                 <a href="#">Transactions</a>
                 <ul class="dropdown">
-                    <li><a href="/pointsofsales/pointsofsales.html" id="pointOfSales"><i class="ph ph-desktop-tower"></i>Point of Sales</a></li>
-                    <li><a href="/reorder/reorder.html" id="purchaseOrder"><i class="ph ph-archive-box"></i>Purchase Order</a></li>
+                    <li><a href="pointsofsales.html" id="pointOfSales"><i class="ph ph-desktop-tower"></i>Point of Sales</a></li>
+                    <li><a href="reorder.html" id="purchaseOrder"><i class="ph ph-archive-box"></i>Purchase Order</a></li>
                 </ul>
             </li>
             <li>
@@ -304,66 +303,74 @@
     
     <script type="module">
         // auth
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
-import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCObxjPYHb8tE7c5aw42B2Dw3dBGbOKQ0M",
-  authDomain: "pos-project-893cb.firebaseapp.com",
-  projectId: "pos-project-893cb",
-  storageBucket: "pos-project-893cb.appspot.com",
-  messagingSenderId: "409155072529",
-  appId: "1:409155072529:web:31ded94cc28f33d3cff7b0",
-  measurementId: "G-PY0L5WNNRY"
-};
+        const firebaseConfig = {
+        apiKey: "AIzaSyCObxjPYHb8tE7c5aw42B2Dw3dBGbOKQ0M",
+        authDomain: "pos-project-893cb.firebaseapp.com",
+        projectId: "pos-project-893cb",
+        storageBucket: "pos-project-893cb.appspot.com",
+        messagingSenderId: "409155072529",
+        appId: "1:409155072529:web:31ded94cc28f33d3cff7b0",
+        measurementId: "G-PY0L5WNNRY"
+        };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth();
-
-
-document.querySelector('.signOut').addEventListener('click', () => {
-    signOut(auth).then(() => {
-        console.log('Sign Out Successfully');
-        alert('Sign Out Successfully');
-        location.replace('/index.html')
-    })
-    .catch((error) => {
-        console.log('Error Occured');
-    })
-})
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
 
 
-document.querySelector('#dashboard').addEventListener('click', ()=>{
-    location.replace('dashboard.html');
-})
-document.querySelector('#userManagement').addEventListener('click', ()=>{
-    window.open('usermanagement.html');
-  window.close();
-})
-document.querySelector('#manageProduct').addEventListener('click', ()=>{
-    location.replace('manageproducts.html');
-})
-document.querySelector('#manageCategories').addEventListener('click', ()=>{
-    location.replace('managecategories.html');
-})
-document.querySelector('#supplier').addEventListener('click', ()=>{
-    location.replace('suppliers.html');
-})
-document.querySelector('#pointOfSales').addEventListener('click', ()=>{
-    location.replace('pointsofsales.html');
-})
-document.querySelector('#purchaseOrder').addEventListener('click', ()=>{
-    location.replace('reorder.html');
-})
-document.querySelector('#salesHistory').addEventListener('click', ()=>{
-    location.replace('saleshistory.html');
-})
-document.querySelector('#salesReport').addEventListener('click', ()=>{
-    location.replace('salesreport.html');
-})
+        document.querySelector('.signOut').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                console.log('Sign Out Successfully');
+                alert('Sign Out Successfully');
+                window.open('index.html')
+            })
+            .catch((error) => {
+                console.log('Error Occured');
+            })
+        })
+
+
+        document.querySelector('#dashboard').addEventListener('click', ()=>{
+            window.open('dashboard.html');
+            window.close();
+        })
+        document.querySelector('#userManagement').addEventListener('click', ()=>{
+            window.open('usermanagement.html');
+            window.close();
+        })
+        document.querySelector('#manageProduct').addEventListener('click', ()=>{
+            window.open('manageproducts.html');
+            window.close();
+        })
+        document.querySelector('#manageCategories').addEventListener('click', ()=>{
+            window.open('managecategories.html');
+            window.close();
+        })
+        document.querySelector('#supplier').addEventListener('click', ()=>{
+            window.open('suppliers.html');
+            window.close();
+        })
+        document.querySelector('#pointOfSales').addEventListener('click', ()=>{
+            window.open('pointsofsales.html');
+            window.close();
+        })
+        document.querySelector('#purchaseOrder').addEventListener('click', ()=>{
+            window.open('reorder.html');
+            window.close();
+        })
+        document.querySelector('#salesHistory').addEventListener('click', ()=>{
+            window.open('saleshistory.html');
+            window.close();
+        })
+        document.querySelector('#salesReport').addEventListener('click', ()=>{
+            window.open('salesreport.html');
+            window.close();
+        })
     </script>
 
 </body>
