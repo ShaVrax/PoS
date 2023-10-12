@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+#login-signup{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.banner{
+    min-height: 100vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-BG{
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform: rotate(180deg);
+    z-index: -999;
+}
+
+.banner-icon{
+    width: 100px;
+}
+
+.banner h1{
+    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
+    max-width: 80%;
+    font-size: 4.25rem;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #000;
+    margin: 1.5rem;
+    margin-top: 8rem;
+}
+
+.login{
+    min-height: 100vh;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+#login, #signup{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 10rem;
+    gap: 1.5rem;
+    background-color: #f3f3f3;
+    width: 100%;
+    transition: .3s ease-in-out;
+}
+
+#login h2, #signup h2{
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    font-size: 3.5rem;
+    color: #4b4b4b;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#login .inputs, #signup .inputs{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: .75rem 0;
+}
+
+.inputs input, select{
+    font-size: 1.25rem;
+    padding: .5rem;
+    width: 100%;
+    background-color: transparent;
+}
+
+.inputs input:focus ~ label,
+.inputs input:valid ~ label{
+    top: -.75rem;
+    color: #2691d9;
+}
+
+.inputs input:focus ~ span::before,
+.inputs input:valid ~ span::before{
+    width: 100%;
+}
+
+.inputs label{
+    position: absolute;
+    top: 50%;
+    left: .5rem;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    transition: .3s ease-in-out;
+}
+
+.inputs span::before{
+    content: "";
+    position: absolute;
+    top: 2.95rem;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #2691d9;
+}
+
+#login a, #signup a{
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: right;
+}
+
+#login a:hover, #signup a:hover{
+    text-decoration: underline;
+}
+
+#login button, #signup button{
+    font-size: 1.5rem;
+    padding: .75rem 6rem;
+    border-radius: 5rem;
+    background-color: #D21615;
+    color: #fff;
+    cursor: pointer;
+}
+
+#login h4, #signup h4{
+    text-align: center;
+    font-weight: 400;
+}
+
+
+#signup{
+    position: absolute;
+    left: 1200px;
+    top: 0;
+    z-index: 9999;
+}

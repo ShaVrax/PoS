@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>POS System</title>
+</head>
+<body>
+    
+    <section id="login-signup">
+        <div class="banner">
+            <h1>Tita's General merchandises</h1>
+            <img src="imgResources/arrowBG.jpg" alt="" class="banner-BG">
+            <!-- <img src="imagesrc/hat.svg" alt="" class="banner-icon"> -->
+        </div>
+        <div class="login">
+            <div id="login">
+                <h2>Admin Login</h2>
+                <div class="inputs">
+                    <input class="username" id="loginEmail" type="text" autocomplete="off" required>
+                    <span></span>
+                    <label for="username">Email Address</label>
+                </div>
+                <div class="inputs">
+                    <input class="password" id="loginPassword" type="password" autocomplete="off" required>
+                    <span></span>
+                    <label for="password">Password</label>
+                </div>
+                <a href="/forgotpassword/forgotpassword.html" id="forgotPassword">Forgot Password?</a>
+                <button class="login-btn">Log In</button>
+                <h4>No account? <a href="#" id="signupBtn" onclick="clearText()">Sign up</a></h4>
+            </div>
+
+            <div id="signup">
+                <h2>Create new Admin</h2>
+                <div class="inputs">
+                    <input class="name" id="signupName" type="text" autocomplete="off" required>
+                    <span></span>
+                    <label for="name">Name</label>
+                </div>
+                <div class="inputs">
+                    <select class="position" id="signupPosition">
+                        <option value="" hidden>Position</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Cashier">Cashier</option>
+                    </select>
+                </div>
+                <div class="inputs">
+                    <input class="username" id="signupEmail" type="text" autocomplete="off" required>
+                    <span></span>
+                    <label for="username">Email Address</label>
+                </div>
+                <div class="inputs">
+                    <input class="password" id="signupPassword" type="password" autocomplete="off" required>
+                    <span></span>
+                    <label for="password">Password</label>
+                </div>
+                <button class="signup-btn">Sign up</button>
+                <h4>Already have an account? <a href="#" id="loginBtn" onclick="clearText()">Log In</a></h4>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            databaseURL : 'https://pos-project-893cb-default-rtdb.firebaseio.com'
+        }
+
+        firebase.initializeApp(firebaseConfig);
+
+        const database = firebase.database();
+
+        const submit = document.querySelector('.signup-btn');
+        submit.onclick = () => sendData();
+
+        function sendData() {
+            let name = document.querySelector('#signupName');
+            let position = document.querySelector('#signupPosition');
+            let email = document.querySelector('#signupEmail');
+
+            let listRef = database.ref('email/');
+
+            let newRef = listRef.push();
+
+            newRef.set({
+                'name' : name.value,
+                'position' : position.value,
+                'email' : email.value
+            })
+        }
+    </script>
+
+    <script src="app.js" type="module"></script>
+
+</body>
+</html>
