@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/dashboard/dashboard.css">
+    <title>POS System</title>
+</head>
+<body>
+
+    <header>
+        <h2>Welcome Admin</h2>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="ph ph-magnifying-glass"></i>
+        </div>
+        <button class="signOut">Sign Out<i id="signout" class="ph ph-sign-out"></i></button>
+    </header>
+
+    <div class="dropdownmenu">
+        <ul id="dropdown">
+            <li>
+                <a href="/dashboard/dashboard.html" id="dashboard">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">File Maintenance</a>
+                <ul class="dropdown">
+                    <li><a href="/usermanagement/usermanagement.html" id="userManagement"><i class="ph ph-users-four"></i>User Management</a></li>
+                    <li><a href="/manageproducts/manageproducts.html" id="manageProduct"><i class="ph ph-package"></i>Manage Product</a></li>
+                    <li><a href="/managecategories/managecategories.html" id="manageCategories"><i class="ph ph-clipboard-text"></i>Manage Categories</a></li>
+                    <li><a href="/suppliers/suppliers.html" id="supplier"><i class="ph ph-handshake"></i>Supplier</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Transactions</a>
+                <ul class="dropdown">
+                    <li><a href="/pointsofsales/pointsofsales.html" id="pointOfSales"><i class="ph ph-desktop-tower"></i>Point of Sales</a></li>
+                    <li><a href="/reorder/reorder.html" id="purchaseOrder"><i class="ph ph-archive-box"></i>Purchase Order</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Order</a>
+                <ul class="dropdown1">
+                    <li><a href="/saleshistory/saleshistory.html" id="salesHistory"><i class="ph ph-clock-clockwise"></i>Sales History</a></li>
+                    <li><a href="/salesreport/salesreport.html" id="salesReport"><i class="ph ph-chart-line-up"></i>Sales Report</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <section class="hero">
+        <div class="sales-report">
+            <div class="daily">
+                <h3>Average Daily Sales</h3>
+                <h2>103,477</h2>
+                <a href="#">Show History</a>
+            </div>
+            <div class="monthly">
+                <h3>Average Monthly Sales</h3>
+                <h2>103,477</h2>
+                <a href="#">Show History</a>
+            </div>
+            <div class="yearly">
+                <h3>Average Yearly Sales</h3>
+                <h2>103,477</h2>
+                <a href="#">Show History</a>
+            </div>
+        </div>
+        <div class="overview-product">
+            <div class="sales-overview">
+                <h2>Sales Overview</h2>
+                <img src="imagesrc/overview.svg" alt="">
+            </div>
+            <div class="products">
+                <h1><i class="ph ph-medal"></i>Best Selling Products</h1>
+                <div class="chart">
+                    <div>
+                        <h3>1st</h3>
+                        <span></span>
+                    </div>
+                    <div>
+                        <h3>2nd</h3>
+                        <span></span>
+                    </div>
+                    <div>
+                        <h3>3rd</h3>
+                        <span></span>
+                    </div>
+                    <div>
+                        <h3>4th</h3>
+                        <span></span>
+                    </div>
+                    <div>
+                        <h3>5th</h3>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="/dashboard/dashboard.js" type="module"></script>
+
+</body>
+</html>
