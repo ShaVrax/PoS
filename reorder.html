@@ -411,7 +411,8 @@
             signOut(auth).then(() => {
                 console.log('Sign Out Successfully');
                 alert('Sign Out Successfully');
-                window.open('index.html')
+                window.open('index.html');
+                window.close();
             })
             .catch((error) => {
                 console.log('Error Occured');
