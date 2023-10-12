@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        }
+
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 9%;
+            background-color: #314e6d;
+        }
+
+        header h2{
+            font-size: 1.75rem;
+            color: #fff;
+        }
+
+        header .search{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+            border-radius: 4rem;
+            padding: .5rem 2rem;
+        }
+
+        ::placeholder{
+            color: #fff;
+        }
+
+        header .search input{
+            font-size: 1.25rem;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        header .search i{
+            font-size: 1.25rem;
+            color: #fff;
+        }
+
+        header button{
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            cursor: pointer;
+        }
+
+        .dropdownmenu{
+            background-color: #000;
+        }
+
+        .dropdownmenu i{
+            font-size: 1.75rem;
+            color: #fff;
+            margin-right: .75rem;
+        }
+
+        ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        ul li{
+            display: inline-block;
+            position: relative;
+        }
+
+        ul li a{
+            display: block;
+            padding: 1.25rem 1.75rem;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.25rem;
+            color: #fff;
+        }
+
+        ul li ul.dropdown li,
+        ul li ul.dropdown1 li{
+            display: block;
+            transition: .3s;
+        }
+
+        ul li ul.dropdown,
+        ul li ul.dropdown1{
+            width: 150%;
+            position: absolute;
+            z-index: 999;
+            display: none;
+            background-color: #000;
+            color: #fff;
+        }
+
+        ul li ul.dropdown1{
+            width: 200%;
+        }
+
+        ul li ul.dropdown li:hover,
+        ul li ul.dropdown1 li:hover{
+            background-color: #ffffff77;
+        }
+
+        ul li:hover ul.dropdown,
+        ul li:hover ul.dropdown1{
+            display: block;
+        }
+
+        /* hero */
+        .hero{
+            display: flex;
+            justify-content: space-evenly;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+            overflow: hidden;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .profile h2{
+            font-size: 2.5rem;
+        }
+
+        .input{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+
+        .input h3{
+            font-size: 1.25rem;
+        }
+
+        .input input{
+            width: 80%;
+            border: 1px solid #000;
+            border-radius: 2px;
+            font-size: 1rem;
+            padding: .5rem;
+        }
+
+        button{
+            font-size: 1.25rem;
+            color: #fff;
+            background-color: #009879;
+            padding: .5rem 1rem;
+            border-radius: 5px;
+        }
+
+        /* table */
+        table{
+            border-collapse: collapse;
+            margin: 1.25rem 0;
+            font-size: 1.25rem;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        thead{
+            background-color: #009879;
+            color: #fff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        th, td{
+            padding: .75rem 1rem;
+        }
+
+        tbody tr{
+            border-bottom: 1px solid #dddddd;
+        }
+
+        tbody tr:nth-of-type(even){
+            background-color: #f3f3f3;
+        }
+
+        tbody tr:last-of-type{
+            border-bottom: 2px solid #009879;
+        }
+    </style>
+
+    <title>Sales Report</title>
+</head>
+<body>
+    
+    <header>
+        <h2>Welcome Admin</h2>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="ph ph-magnifying-glass"></i>
+        </div>
+        <button class="signOut">Sign Out<i id="signout" class="ph ph-sign-out"></i></button>
+    </header>
+
+    <div class="dropdownmenu">
+        <ul id="dropdown">
+            <li>
+                <a href="dashboard.html" id="dashboard">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">File Maintenance</a>
+                <ul class="dropdown">
+                    <li><a href="usermanagement.html" id="userManagement"><i class="ph ph-users-four"></i>User Management</a></li>
+                    <li><a href="manageproducts.html" id="manageProduct"><i class="ph ph-package"></i>Manage Product</a></li>
+                    <li><a href="managecategories.html" id="manageCategories"><i class="ph ph-clipboard-text"></i>Manage Categories</a></li>
+                    <li><a href="suppliers.html" id="supplier"><i class="ph ph-handshake"></i>Supplier</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Transactions</a>
+                <ul class="dropdown">
+                    <li><a href="pointsofsales.html" id="pointOfSales"><i class="ph ph-desktop-tower"></i>Point of Sales</a></li>
+                    <li><a href="reorder.html" id="purchaseOrder"><i class="ph ph-archive-box"></i>Purchase Order</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Order</a>
+                <ul class="dropdown1">
+                    <li><a href="saleshistory.html" id="salesHistory"><i class="ph ph-clock-clockwise"></i>Sales History</a></li>
+                    <li><a href="salesreport.html" id="salesReport"><i class="ph ph-chart-line-up"></i>Sales Report</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <section class="hero">
+        <div class="profile">
+            <h2>Sales Report</h2>
+            <h3>Filter Date: </h3>
+            <div class="input">
+                <input type="month" id="month">
+                <button id="search">Search</button>
+            </div>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                        <th>Total Sales</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script type="module">
+        const search = document.querySelector('#search');
+        search.addEventListener('click', ()=>{
+            console.log(document.querySelector('#month').value);
+
+        })
+
+        // auth
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyCObxjPYHb8tE7c5aw42B2Dw3dBGbOKQ0M",
+        authDomain: "pos-project-893cb.firebaseapp.com",
+        projectId: "pos-project-893cb",
+        storageBucket: "pos-project-893cb.appspot.com",
+        messagingSenderId: "409155072529",
+        appId: "1:409155072529:web:31ded94cc28f33d3cff7b0",
+        measurementId: "G-PY0L5WNNRY"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+
+
+        document.querySelector('.signOut').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                console.log('Sign Out Successfully');
+                alert('Sign Out Successfully');
+                window.open('index.html')
+            })
+            .catch((error) => {
+                console.log('Error Occured');
+            })
+        })
+
+
+        document.querySelector('#dashboard').addEventListener('click', ()=>{
+            window.open('dashboard.html');
+            window.close();
+        })
+        document.querySelector('#userManagement').addEventListener('click', ()=>{
+            window.open('usermanagement.html');
+            window.close();
+        })
+        document.querySelector('#manageProduct').addEventListener('click', ()=>{
+            window.open('manageproducts.html');
+            window.close();
+        })
+        document.querySelector('#manageCategories').addEventListener('click', ()=>{
+            window.open('managecategories.html');
+            window.close();
+        })
+        document.querySelector('#supplier').addEventListener('click', ()=>{
+            window.open('suppliers.html');
+            window.close();
+        })
+        document.querySelector('#pointOfSales').addEventListener('click', ()=>{
+            window.open('pointsofsales.html');
+            window.close();
+        })
+        document.querySelector('#purchaseOrder').addEventListener('click', ()=>{
+            window.open('reorder.html');
+            window.close();
+        })
+        document.querySelector('#salesHistory').addEventListener('click', ()=>{
+            window.open('saleshistory.html');
+            window.close();
+        })
+        document.querySelector('#salesReport').addEventListener('click', ()=>{
+            window.open('salesreport.html');
+            window.close();
+        })
+    </script>
+
+</body>
+</html>

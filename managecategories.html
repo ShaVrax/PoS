@@ -4,241 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- <link rel="stylesheet" href="/usermanagement/usermanagement.css"> -->
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-}
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        }
 
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 9%;
-    background-color: #314e6d;
-}
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 9%;
+            background-color: #314e6d;
+        }
 
-header h2{
-    font-size: 1.75rem;
-    color: #fff;
-}
+        header h2{
+            font-size: 1.75rem;
+            color: #fff;
+        }
 
-header .search{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #fff;
-    border-radius: 4rem;
-    padding: .5rem 2rem;
-}
+        header .search{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+            border-radius: 4rem;
+            padding: .5rem 2rem;
+        }
 
-::placeholder{
-    color: #fff;
-}
+        ::placeholder{
+            color: #fff;
+        }
 
-header .search input{
-    font-size: 1.25rem;
-    background-color: transparent;
-    color: #fff;
-}
+        header .search input{
+            font-size: 1.25rem;
+            background-color: transparent;
+            color: #fff;
+        }
 
-header .search i{
-    font-size: 1.25rem;
-    color: #fff;
-}
+        header .search i{
+            font-size: 1.25rem;
+            color: #fff;
+        }
 
-header button{
-    font-size: 1.5rem;
-    color: #fff;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    cursor: pointer;
-}
+        header button{
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            cursor: pointer;
+        }
 
-button{
-    font-size: 1.25rem;
-    color: #fff;
-    background-color: #009879;
-    padding: .5rem 1rem;
-    border-radius: 5px;
-}
+        .dropdownmenu{
+            background-color: #000;
+        }
 
-.dropdownmenu{
-    background-color: #000;
-}
+        .dropdownmenu i{
+            font-size: 1.75rem;
+            color: #fff;
+            margin-right: .75rem;
+        }
 
-.dropdownmenu i{
-    font-size: 1.75rem;
-    color: #fff;
-    margin-right: .75rem;
-}
+        ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
 
-ul{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
+        ul li{
+            display: inline-block;
+            position: relative;
+        }
 
-ul li{
-    display: inline-block;
-    position: relative;
-}
+        ul li a{
+            display: block;
+            padding: 1.25rem 1.75rem;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.25rem;
+            color: #fff;
+        }
 
-ul li a{
-    display: block;
-    padding: 1.25rem 1.75rem;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.25rem;
-    color: #fff;
-}
+        ul li ul.dropdown li,
+        ul li ul.dropdown1 li{
+            display: block;
+            transition: .3s;
+        }
 
-ul li ul.dropdown li,
-ul li ul.dropdown1 li{
-    display: block;
-    transition: .3s;
-}
+        ul li ul.dropdown,
+        ul li ul.dropdown1{
+            width: 150%;
+            position: absolute;
+            z-index: 999;
+            display: none;
+            background-color: #000;
+            color: #fff;
+        }
 
-ul li ul.dropdown,
-ul li ul.dropdown1{
-    width: 150%;
-    position: absolute;
-    z-index: 999;
-    display: none;
-    background-color: #000;
-    color: #fff;
-}
+        ul li ul.dropdown1{
+            width: 200%;
+        }
 
-ul li ul.dropdown1{
-    width: 200%;
-}
+        ul li ul.dropdown li:hover,
+        ul li ul.dropdown1 li:hover{
+            background-color: #ffffff77;
+        }
 
-ul li ul.dropdown li:hover,
-ul li ul.dropdown1 li:hover{
-    background-color: #ffffff77;
-}
+        ul li:hover ul.dropdown,
+        ul li:hover ul.dropdown1{
+            display: block;
+        }
 
-ul li:hover ul.dropdown,
-ul li:hover ul.dropdown1{
-    display: block;
-}
+        /* hero */
+        .hero{
+            display: flex;
+            justify-content: space-evenly;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+            overflow-x: hidden;
+        }
 
-/* hero */
-.hero{
-    display: flex;
-    justify-content: space-evenly;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: center;
-}
+        .profile{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
 
-.profile{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
+        .profile h2{
+            font-size: 2.5rem;
+        }
 
-.profile h2{
-    font-size: 2.5rem;
-}
+        .inputs{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
 
-.inputs{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
+        .input{
+            display: flex;
+            align-items: center;
+        }
 
-.input{
-    display: flex;
-    align-items: center;
-}
+        .input h3{
+            width: 40%;
+        }
 
-.input h3{
-    width: 40%;
-}
+        .input h3{
+            font-size: 1.25rem;
+        }
 
-.input h3{
-    font-size: 1.25rem;
-}
+        .input input{
+            width: 80%;
+            border: 1px solid #000;
+            border-radius: 2px;
+            font-size: 1rem;
+            padding: .5rem;
+        }
 
-.input input{
-    width: 80%;
-    border: 1px solid #000;
-    border-radius: 2px;
-    font-size: 1rem;
-    padding: .5rem;
-}
+        button{
+            font-size: 1.25rem;
+            color: #fff;
+            background-color: #009879;
+            padding: .5rem 1rem;
+            border-radius: 5px;
+        }
 
-.buttons{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
+        /* table */
+        table{
+            border-collapse: collapse;
+            margin: 1.25rem 0;
+            font-size: 1.25rem;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
 
-.buttons button{
-    background-color: #000;
-    font-size: 1.25rem;
-    color: #fff;
-    padding: .5rem 2rem;
-    border-radius: 5px;
-}
+        thead{
+            background-color: #009879;
+            color: #fff;
+            text-align: left;
+            font-weight: bold;
+        }
 
-/* table */
-table{
-    border-collapse: collapse;
-    margin: 1.25rem 0;
-    font-size: 1.25rem;
-    min-width: 400px;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
+        th, td{
+            text-align: center;
+            padding: .75rem 3rem;
+        }
 
-thead{
-    background-color: #009879;
-    color: #fff;
-    text-align: left;
-    font-weight: bold;
-}
+        tbody tr{
+            border-bottom: 1px solid #dddddd;
+        }
 
-th, td{
-    padding: .75rem 3rem;
-}
+        tbody tr:nth-of-type(even){
+            background-color: #f3f3f3;
+        }
 
-tbody tr{
-    border-bottom: 1px solid #dddddd;
-}
-
-tbody tr:nth-of-type(even){
-    background-color: #f3f3f3;
-}
-
-tbody tr:last-of-type{
-    border-bottom: 2px solid #009879;
-}
+        tbody tr:last-of-type{
+            border-bottom: 2px solid #009879;
+        }
     </style>
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <title>User Management</title>
+    <title>Manage Categories</title>
 </head>
 <body>
-
+    
     <header>
         <h2>Welcome Admin</h2>
         <div class="search">
@@ -280,53 +262,36 @@ tbody tr:last-of-type{
     </div>
     
     <section class="hero">
-        <!-- <div class="profile">
-            <h2>User Management</h2>
+        <div class="profile">
+            <h2>Manage Categories</h2>
             <div class="inputs">
                 <div class="input">
-                    <h3>User ID: </h3>
-                    <input type="text">
+                    <h3>ID: </h3>
+                    <input type="text" id="categoryId">
                 </div>
                 <div class="input">
                     <h3>Name: </h3>
-                    <input type="text">
+                    <input type="text" id="categoryName">
                 </div>
                 <div class="input">
-                    <h3>Group: </h3>
-                    <input type="text">
-                </div>
-                <div class="input">
-                    <h3>Email: </h3>
-                    <input type="text">
-                </div>
-                <div class="input">
-                    <h3>Phone: </h3>
-                    <input type="text">
-                </div>
-                <div class="input">
-                    <h3>Password: </h3>
-                    <input type="text">
+                    <h3>Description: </h3>
+                    <input type="text" id="categoryDescription">
                 </div>
             </div>
-            <div class="buttons">
-                <button id="add">Add</button>
-                <button id="Clear">Clear</button>
-                <button id="Update">Update</button>
-            </div>
-        </div> -->
-        <h2>User Management</h2>
+            <button id="add">Add</button>
+        </div>
         <div class="table">
             <table>
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Name</th>
-                        <th>Position</th>
-                        <th>Email</th>
+                        <th>Description</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                 </tbody>
             </table>
         </div>
@@ -336,6 +301,7 @@ tbody tr:last-of-type{
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database-compat.js"></script>
 
     <script type="module">
+        // auth
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
         import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
@@ -347,15 +313,38 @@ tbody tr:last-of-type{
         storageBucket: "pos-project-893cb.appspot.com",
         messagingSenderId: "409155072529",
         appId: "1:409155072529:web:31ded94cc28f33d3cff7b0",
-        measurementId: "G-PY0L5WNNRY",
-        databaseURL : 'https://pos-project-893cb-default-rtdb.firebaseio.com'
+        measurementId: "G-PY0L5WNNRY"
         };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
 
         firebase.initializeApp(firebaseConfig);
 
         const database = firebase.database();
 
-        let fetchedData = database.ref('email/');
+        const submit = document.querySelector('#add');
+        submit.onclick = () => sendData();
+
+        function sendData() {
+            let categoryId = document.querySelector('#categoryId');
+            let categoryName = document.querySelector('#categoryName');
+            let categoryDescription = document.querySelector('#categoryDescription');
+
+            let listRef = database.ref('category/');
+
+            let newRef = listRef.push();
+
+            newRef.set({
+                'id' : categoryId.value,
+                'name' : categoryName.value,
+                'description' : categoryDescription.value
+            })
+        }
+
+        let fetchedData = database.ref('category/');
         fetchedData.on('value', (snapshot) => {
             let data = snapshot.val();
             let htmlData = '';
@@ -364,12 +353,11 @@ tbody tr:last-of-type{
                 htmlData += 
                 `
                     <tr>
+                        <td>${value.id}</td>
                         <td>${value.name}</td>
-                        <td>${value.position}</td>
-                        <td>${value.email}</td>
+                        <td>${value.description}</td>
                         <td>
                             <button onclick="updateData('${key}')">Update</button>
-                            <button onclick="removeData('${key}')">Delete</button>
                         </td>
                     </tr>
                 `;
@@ -377,32 +365,6 @@ tbody tr:last-of-type{
 
             let dataContainer = document.querySelector('tbody').innerHTML = htmlData;
         })
-
-        const removeData = (uniqueId) =>{
-            database.ref('email/' + uniqueId).remove();
-        }
-
-        // auth
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
-// import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCObxjPYHb8tE7c5aw42B2Dw3dBGbOKQ0M",
-//   authDomain: "pos-project-893cb.firebaseapp.com",
-//   projectId: "pos-project-893cb",
-//   storageBucket: "pos-project-893cb.appspot.com",
-//   messagingSenderId: "409155072529",
-//   appId: "1:409155072529:web:31ded94cc28f33d3cff7b0",
-//   measurementId: "G-PY0L5WNNRY",
-//   databaseURL : 'https://pos-project-893cb-default-rtdb.firebaseio.com'
-// };
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth();
-
 
         document.querySelector('.signOut').addEventListener('click', () => {
             signOut(auth).then(() => {
@@ -455,7 +417,7 @@ const auth = getAuth();
 
     </script>
 
-    <!-- <script src="/usermanagement/usermanagement.html" type="module"></script> -->
+    <script src="/managecategories/managecategories.js" type="module"></script>
 
 </body>
 </html>
