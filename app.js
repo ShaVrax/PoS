@@ -69,7 +69,7 @@ let clearText = () =>{
         const user = userCredential.user;
         console.log(user);
         alert('Log In Successfully');
-        window.open("dashboard.html");
+        window.open("dashboard/dashboard.html");
     })
     .catch((error) =>{
         const errorCode = error.code;
